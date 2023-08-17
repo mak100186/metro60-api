@@ -24,6 +24,11 @@ public class ProductService : IProductService
     }
     public async Task<ProductModel> AddProduct(ProductModel model)
     {
+        if (await IsDuplicateProduct(model))
+        {
+            throw new ArgumentException($"Product with Brand={model.Brand} and Title={model.Title} already exists.");
+        }
+
         var product = model.ToDbo();
 
         await _context.Products.AddAsync(product);
@@ -58,5 +63,13 @@ public class ProductService : IProductService
         await _context.SaveChangesAsync();
 
         return product.ToDto();
+    }
+
+    /// <summary>
+    /// This method had to be created as the unique constraint wont work for file based database.
+    /// </summary>
+    private async Task<bool> IsDuplicateProduct(ProductModel model)
+    {
+        return await _context.Products.AnyAsync(product => product.Brand == model.Brand && product.Title == model.Title);
     }
 }

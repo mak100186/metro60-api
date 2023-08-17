@@ -5,11 +5,19 @@ namespace Metro60.Core.Extensions;
 
 public static class MappingExtensions
 {
-    public static UserModel ToDto(this User model) => new() { Id = model.Id, FirstName = model.FirstName, LastName = model.LastName, Username = model.Username };
+    public static UserModel ToDto(this User model) =>
+        new()
+        {
+            Id = model.Id,
+            FirstName = model.FirstName,
+            LastName = model.LastName,
+            Username = model.Username
+        };
 
     public static Product ToDbo(this ProductModel model) =>
         new()
         {
+            Id = model.Id,
             Brand = model.Brand,
             Category = model.Category,
             Description = model.Description,
@@ -18,8 +26,8 @@ public static class MappingExtensions
             Rating = model.Rating,
             Stock = model.Stock,
             Thumbnail = model.Thumbnail,
-            Title = model.Title
-            //Images = model.Images
+            Title = model.Title,
+            Images = string.Join(',', model.Images)
         };
 
     public static ProductModel ToDto(this Product model) =>
@@ -34,8 +42,8 @@ public static class MappingExtensions
             Rating = model.Rating,
             Stock = model.Stock,
             Thumbnail = model.Thumbnail,
-            Title = model.Title
-            //Images = model.Images
+            Title = model.Title,
+            Images = model.Images.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList()
         };
 
     public static void UpdateWith(this Product modelToUpdate, ProductModel model)
@@ -49,7 +57,7 @@ public static class MappingExtensions
         modelToUpdate.Stock = model.Stock;
         modelToUpdate.Thumbnail = model.Thumbnail;
         modelToUpdate.Title = model.Title;
-        //modelToUpdate.Images = model.Images;
+        modelToUpdate.Images = string.Join(',', model.Images);
     }
 
     

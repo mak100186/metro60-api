@@ -8,19 +8,21 @@ public class ProductModel
     [Required]
     public string Title { get; set; }
 
-    [StringLength(100, MinimumLength = 1)]
+    [StringLength(100)]
     public string Description { get; set; }
 
     [Required]
-    public decimal Price { get; set; }
+    [Range(double.Epsilon, double.MaxValue, ErrorMessage = "Price should be greater than 0")]
+    public double Price { get; set; }
 
-    public decimal DiscountPercentage { get; set; }
+    [Range(0, double.MaxValue, ErrorMessage = "Discount percentage should be greater than or equal to 0")]
+    public double DiscountPercentage { get; set; } = 0;
 
-    [Range(1, 5)]
-    public decimal Rating { get; set; }
+    [Range(0, 5)]
+    public double Rating { get; set; } = 0;
 
-    [Range(1, int.MaxValue, ErrorMessage = "Only positive number allowed")]
-    public int Stock { get; set; }
+    [Range(0, int.MaxValue, ErrorMessage = "Only positive number allowed")]
+    public int Stock { get; set; } = 0;
 
     [Required]
     public string Brand { get; set; }
@@ -29,5 +31,5 @@ public class ProductModel
 
     public string Thumbnail { get; set; }
 
-    public List<string> Images { get; set; }
+    public List<string> Images { get; set; } = new();
 }
