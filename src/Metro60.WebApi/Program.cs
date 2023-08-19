@@ -35,4 +35,9 @@ app.UseSerilogRequestLogging()
         });
     });
 
+app.Lifetime.ApplicationStarted.Register(() => Log.Information("Metro60 Products API - Started"));
+app.Lifetime.ApplicationStopped.Register(() => Log.Information("Metro60 Products API - Stopped"));
+app.Lifetime.ApplicationStopping.Register(() => Log.Information("Metro60 Products API - Stopping"));
+Log.Information("Metro60 Products API - Starting");
+
 await app.RunAsync();

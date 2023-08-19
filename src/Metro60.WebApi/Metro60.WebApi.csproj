@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
+    <NoWarn>CS8600;CS8604;CS8618;CS8602;CS1998</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
