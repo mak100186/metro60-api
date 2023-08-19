@@ -80,7 +80,7 @@ public class ProductServiceTests
             Rating = 4.0f,
             Stock = 5,
             Thumbnail = "some uri",
-            Images =new List<string> { "uri 1", "http://someurl.com", "ftp://10.0.1.2" }
+            Images = new List<string> { "uri 1", "http://someurl.com", "ftp://10.0.1.2" }
         };
 
         //act
@@ -95,7 +95,7 @@ public class ProductServiceTests
         product.Id.Should().Be(newProduct.Id);
         product.Brand.Should().Be(newProduct.Brand);
         product.Title.Should().Be(newProduct.Title);
-        
+
     }
 
     [TestCase(100, "Brand Name 100", "Title of the product 100", true)]
@@ -181,7 +181,7 @@ public class ProductServiceTests
         {
             productToUpdate.Title = titleContent;
         }
-        
+
         //act & assert
         if (string.IsNullOrWhiteSpace(titleContent))
         {

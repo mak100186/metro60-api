@@ -60,5 +60,5 @@ public static class MappingExtensions
         modelToUpdate.Images = string.Join(',', model.Images);
     }
 
-    
+
 }

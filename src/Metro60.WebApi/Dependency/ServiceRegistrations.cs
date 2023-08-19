@@ -1,6 +1,4 @@
-﻿using kDg.FileBaseContext.Extensions;
-
-using Metro60.Core.Data;
+﻿using Metro60.Core.Data;
 using Metro60.Core.Handler;
 using Metro60.Core.Services;
 using Metro60.WebApi.Health;
@@ -16,10 +14,7 @@ public static class ServiceRegistrations
     public static WebApplicationBuilder ConfigureServices(this WebApplicationBuilder builder)
     {
         builder.Host.AddLogger();
-        builder.Services.AddDbContext<MetroDbContext>(options =>
-        {
-            options.UseFileBaseContextDatabase("DataSource");
-        });
+        builder.Services.AddDbContext<MetroDbContext>();
         builder.Services.AddAuthentication("BasicAuthentication")
             .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 

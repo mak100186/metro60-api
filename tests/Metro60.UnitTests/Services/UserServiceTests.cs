@@ -37,7 +37,7 @@ public class UserServiceTests
                 Password = "Password"
             }
         };
-        _scope = new TestScope();       
+        _scope = new TestScope();
         _scope.Context.Users.AddRange(_users);
         _scope.Context.SaveChanges();
     }
@@ -82,7 +82,7 @@ public class UserServiceTests
         public TestScope()
         {
             var dbContext = new MetroDbContext(new DbContextOptionsBuilder()
-                .UseInMemoryDatabase(databaseName:$"TestDatabase{Guid.NewGuid()}")
+                .UseInMemoryDatabase(databaseName: $"TestDatabase{Guid.NewGuid()}")
                 .Options);
 
             Context = dbContext;

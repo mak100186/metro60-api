@@ -1,4 +1,3 @@
-using Metro60.Core.Entities;
 using Metro60.Core.Models;
 using Metro60.Core.Services;
 
@@ -31,7 +30,7 @@ public class ProductController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = product.Id }, product);
     }
 
-    [HttpPut]
+    [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

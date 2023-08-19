@@ -40,7 +40,7 @@ public class ProductService : IProductService
     public async Task<ProductModel?> Get(int id)
     {
         var product = await _context.Products.SingleOrDefaultAsync(product => product.Id == id);
-        
+
         return product?.ToDto();
     }
     public async Task<List<ProductModel>> GetAll()

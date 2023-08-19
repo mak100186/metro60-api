@@ -14,7 +14,14 @@ public class MetroDbContext : DbContext
 
     public DbSet<User> Users { get; set; }
     public DbSet<Product> Products { get; set; }
-    
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        base.OnConfiguring(optionsBuilder);
+
+        optionsBuilder.UseFileBaseContextDatabase("DataSource");
+    }
+
     //notes for reviewer: Since there is no db to run the constraints, this wont work for file based databases. Need to manually ensure constraint.
     //only added these to demonstrate how they would have worked in a real-world situation. 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
