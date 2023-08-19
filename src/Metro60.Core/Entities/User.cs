@@ -10,11 +10,12 @@ public class User
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)] //note: this doesn't work for the file based database. provide it manually
     public int Id { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string Username { get; set; }
 
-    //todo: salt/has this password and then save it
+    public string FirstName { get; set; } = null!;
+    public string LastName { get; set; } = null!;
+    public string Username { get; set; } = null!;
+
+    //note: in a real world scenario, we would use a salt so that the passwords are not readable. bcrypt is a good algorithm for this purpose. 
     [JsonIgnore]
-    public string Password { get; set; }
+    public string Password { get; set; } = null!;
 }

@@ -1,6 +1,4 @@
-﻿using Maxx.Plugin.Shared.Health;
-
-using Microsoft.Extensions.Diagnostics.HealthChecks;
+﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace Metro60.WebApi.Health;
 

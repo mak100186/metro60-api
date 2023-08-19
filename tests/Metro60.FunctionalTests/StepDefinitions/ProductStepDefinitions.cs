@@ -139,20 +139,7 @@ public sealed class ProductStepDefinitions : TestBase
             RequestFormat = DataFormat.Json,
             Method = Method.Post
         };
-        request.AddJsonBody(new ProductModel
-        {
-            Id = int.Parse(row[nameof(ProductModel.Id)]),
-            Title = row[nameof(ProductModel.Title)],
-            Description = row[nameof(ProductModel.Description)],
-            Price = double.Parse(row[nameof(ProductModel.Price)]),
-            DiscountPercentage = double.Parse(row[nameof(ProductModel.DiscountPercentage)]),
-            Rating = double.Parse(row[nameof(ProductModel.Rating)]),
-            Stock = int.Parse(row[nameof(ProductModel.Stock)]),
-            Brand = row[nameof(ProductModel.Brand)],
-            Category = row[nameof(ProductModel.Category)],
-            Thumbnail = row[nameof(ProductModel.Thumbnail)],
-            Images = row[nameof(ProductModel.Images)].Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList()
-        });
+        request.AddJsonBody(GetProductModel(row));
         return request;
     }
 
@@ -166,7 +153,13 @@ public sealed class ProductStepDefinitions : TestBase
             RequestFormat = DataFormat.Json,
             Method = Method.Put
         };
-        request.AddJsonBody(new ProductModel
+        request.AddJsonBody(GetProductModel(row));
+        return request;
+    }
+
+    private ProductModel GetProductModel(TableRow row)
+    {
+        return new ProductModel
         {
             Id = int.Parse(row[nameof(ProductModel.Id)]),
             Title = row[nameof(ProductModel.Title)],
@@ -179,7 +172,6 @@ public sealed class ProductStepDefinitions : TestBase
             Category = row[nameof(ProductModel.Category)],
             Thumbnail = row[nameof(ProductModel.Thumbnail)],
             Images = row[nameof(ProductModel.Images)].Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList()
-        });
-        return request;
+        };
     }
 }

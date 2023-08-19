@@ -48,6 +48,10 @@ Scenario: I should not be able to add a new product with existing Title and Bran
     When I add the following product:
     | Id | Title    | Description     | Price | DiscountPercentage | Rating | Stock | Brand | Category    | Thumbnail                                              | Images                                                                                                        |
     | 32 | iPhone 4 | An apple mobile | 549   | 12.96              | 4.69   | 94    | Apple | smartphones | https://dummyjson.com/image/i/products/1/thumbnail.jpg | https://dummyjson.com/image/i/products/1/thumbnail.jpg,https://dummyjson.com/image/i/products/1/thumbnail.jpg |
+    Then the result should be 201
+    When I add the following product:
+    | Id | Title    | Description     | Price | DiscountPercentage | Rating | Stock | Brand | Category    | Thumbnail                                              | Images                                                                                                        |
+    | 34 | iPhone 4 | An apple mobile | 549   | 12.96              | 4.69   | 94    | Apple | smartphones | https://dummyjson.com/image/i/products/1/thumbnail.jpg | https://dummyjson.com/image/i/products/1/thumbnail.jpg,https://dummyjson.com/image/i/products/1/thumbnail.jpg |
     Then the result should be 400 with the following errors:
     | key               | value                                                       |
     | ArgumentException | Product with Brand=Apple and Title=iPhone 4 already exists. |

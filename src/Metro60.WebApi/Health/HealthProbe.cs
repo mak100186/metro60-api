@@ -3,7 +3,7 @@ using System.Text;
 
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace Maxx.Plugin.Shared.Health;
+namespace Metro60.WebApi.Health;
 
 public interface IHealthProbe
 {

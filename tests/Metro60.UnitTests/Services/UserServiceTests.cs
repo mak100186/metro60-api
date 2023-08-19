@@ -81,13 +81,25 @@ public class UserServiceTests
 
         public TestScope()
         {
-            var dbContext = new MetroDbContext(new DbContextOptionsBuilder()
+            var dbContext = new MockMetroDbContext(new DbContextOptionsBuilder()
                 .UseInMemoryDatabase(databaseName: $"TestDatabase{Guid.NewGuid()}")
                 .Options);
 
             Context = dbContext;
             ServiceUnderTest = new UserService(dbContext);
 
+        }
+
+        //notes for reviewer: we are doing this so that we can use in memory database for unit tests instead of the actual file based one
+        private class MockMetroDbContext : MetroDbContext
+        {
+            public MockMetroDbContext(DbContextOptions options) : base(options)
+            {
+            }
+
+            protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            {
+            }
         }
     }
 }

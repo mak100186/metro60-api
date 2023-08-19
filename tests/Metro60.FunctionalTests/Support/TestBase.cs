@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Configuration;
+
 using RestSharp;
 using RestSharp.Authenticators;
 
@@ -7,12 +9,16 @@ public class TestBase
 {
     protected RestClient Client;
     protected RestClient ClientWithoutAuthentication;
-    private readonly ScenarioContext ScenarioContext;
+    private readonly ScenarioContext _scenarioContext;
 
     protected TestBase(ScenarioContext scenarioContext)
     {
-        ScenarioContext = scenarioContext;
-        var serviceUrl = "https://localhost:7204";
+        var configuration = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json", optional: false)
+            .Build();
+
+        _scenarioContext = scenarioContext;
+        var serviceUrl = configuration["serviceUrl"]!;
 
         Client = new RestClient(new RestClientOptions(serviceUrl)
         {
@@ -24,7 +30,7 @@ public class TestBase
 
     protected RestResponse? Response
     {
-        get => ScenarioContext.Get<RestResponse?>(nameof(Response));
-        set => ScenarioContext.Set<RestResponse?>(value, nameof(Response));
+        get => _scenarioContext.Get<RestResponse?>(nameof(Response));
+        set => _scenarioContext.Set<RestResponse?>(value, nameof(Response));
     }
 }

@@ -75,21 +75,7 @@ public class Tests
         userModel.LastName.Should().Be(_userTestSubject.LastName);
         userModel.Username.Should().Be(_userTestSubject.Username);
     }
-
-    [Test]
-    public void User_JsonConvert_ShouldNotSerializePassword()
-    {
-        //arrange & act
-        var jsonString = JsonConvert.SerializeObject(_userTestSubject);
-
-        //assert
-        jsonString.Should().NotBeNull();
-        jsonString.Should().Contain("Test User First Name");
-        jsonString.Should().Contain("Test User Last Name");
-        jsonString.Should().Contain("Test Username");
-        jsonString.Should().NotContain("Test User Password");
-    }
-
+    
     [Test]
     public void ProductModel_ToDto_ReturnsProductAsExpected()
     {

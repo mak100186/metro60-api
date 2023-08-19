@@ -12,6 +12,7 @@ public interface IProductService
     Task<ProductModel> UpdateProduct(int id, ProductModel model);
     Task<List<ProductModel>> GetAll();
     Task<ProductModel?> Get(int id);
+    Task<ProductModel?> DeleteProduct(int id);
 }
 
 public class ProductService : IProductService
@@ -42,6 +43,16 @@ public class ProductService : IProductService
         var product = await _context.Products.SingleOrDefaultAsync(product => product.Id == id);
 
         return product?.ToDto();
+    }
+    public async Task<ProductModel?> DeleteProduct(int id)
+    {
+        var product = await _context.Products.SingleOrDefaultAsync(product => product.Id == id);
+
+        _context.Products.Remove(product);
+
+        await _context.SaveChangesAsync();
+
+        return product.ToDto();
     }
     public async Task<List<ProductModel>> GetAll()
     {

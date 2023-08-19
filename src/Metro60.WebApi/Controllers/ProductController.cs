@@ -1,8 +1,11 @@
 using Metro60.Core.Models;
 using Metro60.Core.Services;
+using Metro60.WebApi.Controllers.Examples;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+
+using Swashbuckle.AspNetCore.Filters;
 
 namespace Metro60.WebApi.Controllers;
 
@@ -23,6 +26,7 @@ public class ProductController : ControllerBase
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [SwaggerRequestExample(typeof(ProductModel), typeof(AddProductExamples))]
     public async Task<IActionResult> AddProduct([FromBody] ProductModel model)
     {
         var product = await _productService.AddProduct(model);
@@ -47,6 +51,16 @@ public class ProductController : ControllerBase
     public async Task<IActionResult> GetById(int id)
     {
         var product = await _productService.Get(id);
+
+        return product == null ? NotFound() : Ok(product);
+    }
+
+    [HttpDelete("{id}")]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> DeleteProduct(int id)
+    {
+        var product = await _productService.DeleteProduct(id);
 
         return product == null ? NotFound() : Ok(product);
     }

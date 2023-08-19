@@ -435,14 +435,45 @@ this.ScenarioInitialize(scenarioInfo);
 #line 48
     testRunner.When("I add the following product:", ((string)(null)), table6, "When ");
 #line hidden
+#line 51
+    testRunner.Then("the result should be 201", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
                 TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Id",
+                            "Title",
+                            "Description",
+                            "Price",
+                            "DiscountPercentage",
+                            "Rating",
+                            "Stock",
+                            "Brand",
+                            "Category",
+                            "Thumbnail",
+                            "Images"});
+                table7.AddRow(new string[] {
+                            "34",
+                            "iPhone 4",
+                            "An apple mobile",
+                            "549",
+                            "12.96",
+                            "4.69",
+                            "94",
+                            "Apple",
+                            "smartphones",
+                            "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
+                            "https://dummyjson.com/image/i/products/1/thumbnail.jpg,https://dummyjson.com/imag" +
+                                "e/i/products/1/thumbnail.jpg"});
+#line 52
+    testRunner.When("I add the following product:", ((string)(null)), table7, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table7.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "ArgumentException",
                             "Product with Brand=Apple and Title=iPhone 4 already exists."});
-#line 51
-    testRunner.Then("the result should be 400 with the following errors:", ((string)(null)), table7, "Then ");
+#line 55
+    testRunner.Then("the result should be 400 with the following errors:", ((string)(null)), table8, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -457,7 +488,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "products"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I should not be able to add a new product with existing Id", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 56
+#line 60
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -477,10 +508,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 57
+#line 61
     testRunner.Given("I have products in the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                             "Id",
                             "Title",
                             "Description",
@@ -492,7 +523,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Category",
                             "Thumbnail",
                             "Images"});
-                table8.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "31",
                             "iPhone 8",
                             "An apple mobile",
@@ -505,17 +536,17 @@ this.ScenarioInitialize(scenarioInfo);
                             "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
                             "https://dummyjson.com/image/i/products/1/thumbnail.jpg,https://dummyjson.com/imag" +
                                 "e/i/products/1/thumbnail.jpg"});
-#line 58
-    testRunner.When("I add the following product:", ((string)(null)), table8, "When ");
+#line 62
+    testRunner.When("I add the following product:", ((string)(null)), table9, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table9.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "ArgumentException",
                             "An item with the same key has already been added. Key: 31"});
-#line 61
-    testRunner.Then("the result should be 400 with the following errors:", ((string)(null)), table9, "Then ");
+#line 65
+    testRunner.Then("the result should be 400 with the following errors:", ((string)(null)), table10, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -530,7 +561,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "products"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I should not be able to add a new product without title", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 66
+#line 70
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -550,10 +581,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 67
+#line 71
     testRunner.Given("I have products in the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                             "Id",
                             "Title",
                             "Description",
@@ -565,7 +596,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Category",
                             "Thumbnail",
                             "Images"});
-                table10.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "33",
                             "",
                             "An apple mobile",
@@ -578,17 +609,17 @@ this.ScenarioInitialize(scenarioInfo);
                             "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
                             "https://dummyjson.com/image/i/products/1/thumbnail.jpg,https://dummyjson.com/imag" +
                                 "e/i/products/1/thumbnail.jpg"});
-#line 68
-    testRunner.When("I add the following product:", ((string)(null)), table10, "When ");
+#line 72
+    testRunner.When("I add the following product:", ((string)(null)), table11, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table11.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "Title",
                             "The Title field is required."});
-#line 71
-    testRunner.Then("the result should be 400 with the following errors:", ((string)(null)), table11, "Then ");
+#line 75
+    testRunner.Then("the result should be 400 with the following errors:", ((string)(null)), table12, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -605,7 +636,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I should not be able to add a new product with a description of more than 100 cha" +
                     "racters", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 76
+#line 80
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -625,10 +656,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 77
+#line 81
     testRunner.Given("I have products in the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                             "Id",
                             "Title",
                             "Description",
@@ -640,7 +671,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Category",
                             "Thumbnail",
                             "Images"});
-                table12.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "33",
                             "iPhone 8",
                             "An apple mobile.An apple mobile.An apple mobile.An apple mobile.An apple mobile.A" +
@@ -654,17 +685,17 @@ this.ScenarioInitialize(scenarioInfo);
                             "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
                             "https://dummyjson.com/image/i/products/1/thumbnail.jpg,https://dummyjson.com/imag" +
                                 "e/i/products/1/thumbnail.jpg"});
-#line 78
-    testRunner.When("I add the following product:", ((string)(null)), table12, "When ");
+#line 82
+    testRunner.When("I add the following product:", ((string)(null)), table13, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table13.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "Description",
                             "The field Description must be a string with a maximum length of 100."});
-#line 81
-    testRunner.Then("the result should be 400 with the following errors:", ((string)(null)), table13, "Then ");
+#line 85
+    testRunner.Then("the result should be 400 with the following errors:", ((string)(null)), table14, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -679,7 +710,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "products"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I should not be able to add a new product with a price of 0", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 86
+#line 90
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -699,10 +730,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 87
+#line 91
     testRunner.Given("I have products in the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                             "Id",
                             "Title",
                             "Description",
@@ -714,7 +745,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Category",
                             "Thumbnail",
                             "Images"});
-                table14.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "33",
                             "iPhone 8",
                             "An apple mobile",
@@ -727,17 +758,17 @@ this.ScenarioInitialize(scenarioInfo);
                             "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
                             "https://dummyjson.com/image/i/products/1/thumbnail.jpg,https://dummyjson.com/imag" +
                                 "e/i/products/1/thumbnail.jpg"});
-#line 88
-    testRunner.When("I add the following product:", ((string)(null)), table14, "When ");
+#line 92
+    testRunner.When("I add the following product:", ((string)(null)), table15, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table15.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Price",
                             "Price should be greater than 0"});
-#line 91
-    testRunner.Then("the result should be 400 with the following errors:", ((string)(null)), table15, "Then ");
+#line 95
+    testRunner.Then("the result should be 400 with the following errors:", ((string)(null)), table16, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -752,7 +783,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "products"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I should not be able to add a new product with a price of less than 0", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 96
+#line 100
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -772,10 +803,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 97
+#line 101
     testRunner.Given("I have products in the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                             "Id",
                             "Title",
                             "Description",
@@ -787,7 +818,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Category",
                             "Thumbnail",
                             "Images"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "33",
                             "iPhone 8",
                             "An apple mobile",
@@ -800,17 +831,17 @@ this.ScenarioInitialize(scenarioInfo);
                             "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
                             "https://dummyjson.com/image/i/products/1/thumbnail.jpg,https://dummyjson.com/imag" +
                                 "e/i/products/1/thumbnail.jpg"});
-#line 98
-    testRunner.When("I add the following product:", ((string)(null)), table16, "When ");
+#line 102
+    testRunner.When("I add the following product:", ((string)(null)), table17, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table17.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "Price",
                             "Price should be greater than 0"});
-#line 101
-    testRunner.Then("the result should be 400 with the following errors:", ((string)(null)), table17, "Then ");
+#line 105
+    testRunner.Then("the result should be 400 with the following errors:", ((string)(null)), table18, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -827,7 +858,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "authentication"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I should not be able to add a product without authentication", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 106
+#line 110
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -847,76 +878,7 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 107
-    testRunner.Given("I have products in the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Id",
-                            "Title",
-                            "Description",
-                            "Price",
-                            "DiscountPercentage",
-                            "Rating",
-                            "Stock",
-                            "Brand",
-                            "Category",
-                            "Thumbnail",
-                            "Images"});
-                table18.AddRow(new string[] {
-                            "33",
-                            "iPhone 8",
-                            "An apple mobile",
-                            "-10",
-                            "12.96",
-                            "4.69",
-                            "94",
-                            "Apple",
-                            "smartphones",
-                            "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
-                            "https://dummyjson.com/image/i/products/1/thumbnail.jpg,https://dummyjson.com/imag" +
-                                "e/i/products/1/thumbnail.jpg"});
-#line 108
-    testRunner.When("I add the following product without authentication:", ((string)(null)), table18, "When ");
-#line hidden
 #line 111
-    testRunner.Then("the result should be 401", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("I should not be able to update a product without authentication")]
-        [NUnit.Framework.CategoryAttribute("products")]
-        [NUnit.Framework.CategoryAttribute("authentication")]
-        public virtual void IShouldNotBeAbleToUpdateAProductWithoutAuthentication()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "products",
-                    "authentication"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I should not be able to update a product without authentication", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 114
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 115
     testRunner.Given("I have products in the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -944,10 +906,79 @@ this.ScenarioInitialize(scenarioInfo);
                             "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
                             "https://dummyjson.com/image/i/products/1/thumbnail.jpg,https://dummyjson.com/imag" +
                                 "e/i/products/1/thumbnail.jpg"});
-#line 116
-    testRunner.When("I update the following product without authentication:", ((string)(null)), table19, "When ");
+#line 112
+    testRunner.When("I add the following product without authentication:", ((string)(null)), table19, "When ");
 #line hidden
+#line 115
+    testRunner.Then("the result should be 401", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("I should not be able to update a product without authentication")]
+        [NUnit.Framework.CategoryAttribute("products")]
+        [NUnit.Framework.CategoryAttribute("authentication")]
+        public virtual void IShouldNotBeAbleToUpdateAProductWithoutAuthentication()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "products",
+                    "authentication"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I should not be able to update a product without authentication", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 118
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
 #line 119
+    testRunner.Given("I have products in the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Id",
+                            "Title",
+                            "Description",
+                            "Price",
+                            "DiscountPercentage",
+                            "Rating",
+                            "Stock",
+                            "Brand",
+                            "Category",
+                            "Thumbnail",
+                            "Images"});
+                table20.AddRow(new string[] {
+                            "33",
+                            "iPhone 8",
+                            "An apple mobile",
+                            "-10",
+                            "12.96",
+                            "4.69",
+                            "94",
+                            "Apple",
+                            "smartphones",
+                            "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
+                            "https://dummyjson.com/image/i/products/1/thumbnail.jpg,https://dummyjson.com/imag" +
+                                "e/i/products/1/thumbnail.jpg"});
+#line 120
+    testRunner.When("I update the following product without authentication:", ((string)(null)), table20, "When ");
+#line hidden
+#line 123
     testRunner.Then("the result should be 401", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
