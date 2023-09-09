@@ -11,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5403A104
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metro60.UnitTests", "tests\Metro60.UnitTests\Metro60.UnitTests.csproj", "{72BDF005-8EE1-4040-AAE3-2C180CE5E13C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metro60.FunctionalTests", "tests\Metro60.FunctionalTests\Metro60.FunctionalTests.csproj", "{B1A77BEF-467C-4AF5-8E7F-CF3341D603C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metro60.FunctionalTests", "tests\Metro60.FunctionalTests\Metro60.FunctionalTests.csproj", "{B1A77BEF-467C-4AF5-8E7F-CF3341D603C9}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{660A64E1-8862-4553-8E8A-D7E31B3DAC15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{B1A77BEF-467C-4AF5-8E7F-CF3341D603C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1A77BEF-467C-4AF5-8E7F-CF3341D603C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1A77BEF-467C-4AF5-8E7F-CF3341D603C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{660A64E1-8862-4553-8E8A-D7E31B3DAC15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{660A64E1-8862-4553-8E8A-D7E31B3DAC15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{660A64E1-8862-4553-8E8A-D7E31B3DAC15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{660A64E1-8862-4553-8E8A-D7E31B3DAC15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

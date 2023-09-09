@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  metro60.webapi:
+    image: ${DOCKER_REGISTRY-}metro60webapi
+    build:
+      context: .
+      dockerfile: src/Metro60.WebApi/Dockerfile
