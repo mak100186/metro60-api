@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Metro60.FunctionalTests": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

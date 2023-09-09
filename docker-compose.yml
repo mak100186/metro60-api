@@ -6,3 +6,9 @@ services:
     build:
       context: .
       dockerfile: src/Metro60.WebApi/Dockerfile
+
+  metro60.functionaltests:
+    image: ${DOCKER_REGISTRY-}functionaltests
+    build:
+      context: .
+      dockerfile: tests/Metro60.FunctionalTests/Dockerfile
