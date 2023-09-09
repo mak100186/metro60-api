@@ -5,15 +5,6 @@ namespace Metro60.Core.Extensions;
 
 public static class MappingExtensions
 {
-    public static UserModel ToDto(this User model) =>
-        new()
-        {
-            Id = model.Id,
-            FirstName = model.FirstName,
-            LastName = model.LastName,
-            Username = model.Username
-        };
-
     public static Product ToDbo(this ProductModel model) =>
         new()
         {
