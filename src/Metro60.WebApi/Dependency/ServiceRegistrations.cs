@@ -26,6 +26,18 @@ public static class ServiceRegistrations
         builder.Services.AddScoped<IProductService, ProductService>();
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("MyAllowSpecificOrigins",
+                policy =>
+                {
+                    policy
+                        .WithOrigins("http://127.0.0.1:3000", "http://localhost:3000")
+                        .AllowAnyHeader()
+                        .AllowCredentials()
+                        .AllowAnyMethod();
+                });
+        });
         builder.Services.AddSwaggerGen(c =>
         {
             c.ExampleFilters();

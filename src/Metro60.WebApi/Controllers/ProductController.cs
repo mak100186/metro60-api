@@ -3,6 +3,7 @@ using Metro60.Core.Services;
 using Metro60.WebApi.Controllers.Examples;
 
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 using Swashbuckle.AspNetCore.Filters;
@@ -45,6 +46,7 @@ public class ProductController : ControllerBase
         return Ok(product);
     }
 
+    [EnableCors("MyAllowSpecificOrigins")]
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ProductModel))]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
